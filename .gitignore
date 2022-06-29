@@ -1,0 +1,7 @@
+/inw
+.idea/
+composer.lock
+/vendor
+tags
+.phpcd.vim
+/.phpunit.result.cache<?php
