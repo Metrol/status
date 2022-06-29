@@ -4,4 +4,4 @@ composer.lock
 /vendor
 tags
 .phpcd.vim
-/.phpunit.result.cache<?php
+/.phpunit.result.cache
