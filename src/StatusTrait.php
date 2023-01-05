@@ -34,14 +34,28 @@ trait StatusTrait
     }
 
     /**
+     * Provide the message set
+     *
+     */
+    public function getMessage(): string
+    {
+        return $this->_message;
+    }
+
+    /**
      * Set the status
      *
      */
-    protected function setStatus(int $status): static
+    protected function setStatus(int $status, string $message = null): static
     {
         if ( Status::isValid($status) )
         {
             $this->_status = $status;
+        }
+
+        if ( ! is_null($message) )
+        {
+            $this->setMessage($message);
         }
 
         return $this;
@@ -56,15 +70,6 @@ trait StatusTrait
         $this->_message = $message;
 
         return $this;
-    }
-
-    /**
-     * Provide the message set
-     *
-     */
-    public function getMessage(): string
-    {
-        return $this->_message;
     }
 
     /**
@@ -102,6 +107,20 @@ trait StatusTrait
     protected function notProcessing(): bool
     {
         if ( $this->getStatus() !== Status::PROCESSING )
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Check if the status is set to anything but OK
+     *
+     */
+    public function notOK(): bool
+    {
+        if ( $this->getStatus() !== Status::OK )
         {
             return true;
         }
