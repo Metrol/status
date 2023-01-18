@@ -58,6 +58,18 @@ class Status
     const NO_CONTENT = 204;
 
     /**
+     * Permanent redirect to a resource that has been moved
+     *
+     */
+    const MOVED_PERMANENT = 301;
+
+    /**
+     * Temporary redirect to another place
+     *
+     */
+    const MOVED_TEMP = 307;
+
+    /**
      * What was requested was not property formed in some way
      *
      */
@@ -80,6 +92,12 @@ class Status
      *
      */
     const PRECONDITION_FAILED = 412;
+
+    /**
+     * When the media type is not supported
+     *
+     */
+    const UNSUPPORTED_MEDIA = 415;
 
     /**
      * Stats code: Unable to process request
