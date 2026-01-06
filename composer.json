@@ -6,7 +6,7 @@
     "homepage"   : "https://github.com/Metrol/status",
 
     "require" : {
-        "php" : ">=8.0 <8.4"
+        "php"     : "8.4.*",
     },
 
     "require-dev": {
